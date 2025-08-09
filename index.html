@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GF/BF Kitne Pyar Karte He ❤️</title>
+  <style>
+    :root{
+      --bg1:#ff758c; --bg2:#ff7eb3; --card:#ffffffaa;
+      --accent:#ff4d6d;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter, "Segoe UI", Arial; min-height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:#111;
+    }
+    .wrap{
+      width:96%; max-width:720px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+      border-radius:16px; padding:18px; box-shadow:0 8px 30px rgba(0,0,0,0.18);
+      text-align:center;
+    }
+    h1{margin:6px 0 2px; font-size:1.6rem; color:white; text-shadow:0 2px 8px rgba(0,0,0,0.35)}
+    p.lead{margin:0 0 14px; color:#fffddf}
+    .frame{
+      width:100%; height:640px; border-radius:12px; overflow:hidden; border:6px solid rgba(255,255,255,0.08);
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      background:var(--card);
+    }
+    .footer{
+      margin-top:12px; display:flex; gap:10px; justify-content:center; align-items:center;
+      color:#fff; font-size:14px;
+    }
+    .btn{
+      background:transparent; border:2px solid rgba(255,255,255,0.18); padding:8px 12px; border-radius:10px; color:white;
+      text-decoration:none; font-weight:600;
+    }
+    .small{font-size:12px; opacity:0.95}
+    @media (max-width:520px){
+      .frame{height:560px}
+      h1{font-size:1.25rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>GF/BF kitne pyar karte he ❤️</h1>
+    <p class="lead">Bas thoda sa test bharo aur dekhte hain — result aapko turant dikhega!</p>
+
+    <!-- ===== REPLACE EMBED URL BELOW with your Google Form embed src URL =====
+         How to get embed src:
+         1) Create Google Form with these fields: Your Name, GF/BF Name, Love level (1-10), Message
+         2) Click Send → &lt;&gt; (embed) → copy the <iframe ...> code
+         3) From that iframe code copy the value of src="..." and paste below in place of EMBED_URL_HERE
+    -->
+    <div class="frame">
+      <iframe id="gfFrame" src="<iframe src="<iframe src="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdPslE1niBZAtDFmsqs6rW9iE08QOxgDJylE97jvWXVTbXePg/viewform?embedded=true" width="640" height="2181" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>" width="640" height="2181" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>" width="640" height="2181" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+
+    <div class="footer">
+      <a class="btn" href="#" id="fakeResultBtn">Dekhao Result (Surprise!)</a>
+      <div class="small">— Share karne ke liye link copy karo aur WhatsApp pe bhejo —</div>
+    </div>
+  </div>
+
+  <script>
+    // OPTIONAL: show a fake congratulations popup after user submits (works only if they click the "Dekhao Result" button)
+    // Real detection of form-submission inside iframe is hard due to cross-origin; so we give a button to show the fake result.
+    document.getElementById('fakeResultBtn').addEventListener('click', function(e){
+      e.preventDefault();
+      // simple animated fake modal
+      const modal = document.createElement('div');
+      modal.style.position='fixed'; modal.style.inset='0'; modal.style.display='flex'; modal.style.alignItems='center'; modal.style.justifyContent='center';
+      modal.style.background='linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6))';
+      modal.innerHTML = `
+        <div style="background:linear-gradient(180deg,#fff,#ffdede); padding:20px; border-radius:14px; text-align:center; width:90%; max-width:420px; box-shadow:0 12px 40px rgba(0,0,0,0.35);">
+          <h2 style="margin:0 0 8px; color:#c91444">🎉 Congratulations!</h2>
+          <p style="margin:0 0 12px; font-weight:600">Aapka Love Score: <span style="font-size:22px; color:#ff2d6d">100%</span></p>
+          <p style="margin:0 0 16px">Dono bohot pyar karte hain — bas ek dusre ko batana baki hai 💖</p>
+          <button id="closeModal" style="padding:10px 14px; border-radius:10px; border:none; background:#ff2d6d; color:white; font-weight:700">OK</button>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      document.getElementById('closeModal').onclick = function(){ modal.remove(); };
+    });
+  </script>
+</body>
+</html>
